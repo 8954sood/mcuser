@@ -1,5 +1,3 @@
-
-
 from mcuser.module1 import asyncuserdata
 from mcuser.module2 import userdata
 
@@ -26,6 +24,10 @@ class MCuser():
         name = self.look
         nameuser = name.username()
         return nameuser
+    def user_names(self):
+        name = self.look
+        nameusers = name.usernames()
+        return nameusers
     def user_avatar(self):
         name = self.look
         nameavatar = name.useravatar()
@@ -45,23 +47,27 @@ class asyncMCuser():
         names = await asyncuserdata.lookup(address)
         name = await names.username()
         return asyncMCuser(name=name, look=names)
-    async def asyncuser_check(self):
+    async def user_check(self):
         name = self.look
         name = await name.checkuser()
         return name
-    async def asyncuser_id(self):
+    async def user_id(self):
         name = self.look
         nameid = await name.userid()
         return nameid
-    async def asyncuser_name(self):
+    async def user_name(self):
         name = self.look
         nameuser = await name.username()
         return nameuser
-    async def asyncuser_avatar(self):
+    async def user_names(self):
+        name = self.look
+        nameusers = await name.usernames()
+        return nameusers
+    async def user_avatar(self):
         name = self.look
         nameavatar = await name.avatar()
         return nameavatar
-    async def asyncuser_rawid(self):
+    async def user_rawid(self):
         name = self.look
         namerawid = await name.raw_id()
         return namerawid
