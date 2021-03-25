@@ -18,6 +18,9 @@ class userdata():
         #await getuser(self.user)
         gets = self.getuser(self.user)
         return str(gets['data']['player']['username'])
+    def usernames(self):
+        gets = self.getuser(self.user)
+        return gets['data']['player']['meta']['name_history']
     def userid(self):
         gets = self.getuser(self.user)
         return str(gets['data']['player']['id'])
