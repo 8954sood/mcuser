@@ -21,6 +21,9 @@ class asyncuserdata():
     async def username(self):
         gets = await self.getuser(self.user)
         return str(gets['data']['player']['username'])
+    async def usernames(self):
+        gets = await self.getuser(self.user)
+        return gets['data']['player']['meta']['name_history']
     async def userid(self):
         gets = await self.getuser(self.user)
         return str(gets['data']['player']['id'])
@@ -30,4 +33,5 @@ class asyncuserdata():
     async def userrawid(self):
         gets = await self.getuser(self.user)
         return str(gets['data']['player']['raw_id'])
+    
     
